@@ -1,0 +1,17 @@
+---
+version: "3"
+
+services:
+  discovery:
+    build:
+      context: .
+    entrypoint: [stdiscosrv]
+    command:
+      - '-metrics-listen=:7070'
+
+  relay:
+    build:
+      context: .
+    entrypoint: [strelaysrv]
+    command:
+      - '-pools=""'
